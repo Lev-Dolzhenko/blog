@@ -1,0 +1,41 @@
+body {
+    background-color: $bg;
+    font-family: 'Roboto', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: $white;
+
+    span {
+        color: $accent;
+    }
+}
+
+.container {
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+
+.visually-hidden {
+    height: 1px;
+    overflow: hidden;
+    width: 1px;
+    
+    position: absolute;
+    
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    
+    white-space: nowrap;
+}
+
+.none {
+    display: none !important;
+}
+
+.title-2 {
+    font-size: 48px;
+    font-weight: 700;
+}
