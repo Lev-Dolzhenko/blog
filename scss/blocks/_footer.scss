@@ -1,0 +1,28 @@
+.footer {
+    margin-top: 100px;
+    padding: 17px 0 46px;
+
+    border-top: 1px solid $secondary;
+}
+
+.footer__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__socials {
+    display: flex;
+    align-items: center;
+    // justify-content: flex-end;
+    column-gap: 10px;
+
+    img {
+        transition: opacity 0.1s ease-in;
+    }
+    
+    
+    img:hover {
+        opacity: 0.6;
+    }
+}

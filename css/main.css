@@ -115,6 +115,9 @@ a:hover {
   padding: 0 20px;
   margin: 0 auto;
 }
+.container--footer {
+  max-width: 1350px;
+}
 
 .visually-hidden {
   height: 1px;
@@ -247,7 +250,7 @@ a:hover {
           transform: scale(1.1);
 }
 
-.projects {
+.main {
   margin-top: 133px;
 }
 
@@ -371,6 +374,115 @@ a:hover {
 .posts__row li p {
   font-size: 20px;
   color: #F8FAFC;
+}
+
+.mailing {
+  margin-top: 130px;
+}
+
+.mailing__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mailing__info {
+  max-width: 600px;
+}
+.mailing__info p {
+  color: #CBD5E1;
+}
+
+.mailing__title {
+  margin-bottom: 33px;
+}
+
+.title-2--mailing {
+  font-weight: 500;
+}
+
+.mail__block {
+  background-color: #1E293B;
+  padding: 10px 14px 10px 30px;
+  border-radius: 30px;
+}
+.mail__block input {
+  color: #FFFFFF;
+  padding-right: 10px;
+}
+.mail__block ::-webkit-input-placeholder {
+  color: #CBD5E1;
+}
+.mail__block ::-moz-placeholder {
+  color: #CBD5E1;
+}
+.mail__block :-ms-input-placeholder {
+  color: #CBD5E1;
+}
+.mail__block ::-ms-input-placeholder {
+  color: #CBD5E1;
+}
+.mail__block ::placeholder {
+  color: #CBD5E1;
+}
+.mail__block button {
+  background: var(--Gradient, linear-gradient(270deg, #22D3EE 50%, #0EA5E9 100%));
+  color: #1E293B;
+  padding: 11px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  color: #1E293B;
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+.mail__block button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.footer {
+  margin-top: 100px;
+  padding: 17px 0 46px;
+  border-top: 1px solid #CBD5E1;
+}
+
+.footer__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+}
+.footer__socials img {
+  -webkit-transition: opacity 0.1s ease-in;
+  transition: opacity 0.1s ease-in;
+}
+.footer__socials img:hover {
+  opacity: 0.6;
 }
 
 /* BLOCKS */
