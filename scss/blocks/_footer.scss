@@ -3,14 +3,29 @@
     padding: 17px 0 46px;
 
     border-top: 1px solid $secondary;
+
+    @include mediaTablet {
+        padding: 10px 20px;
+        margin-top: 50px;
+    }
 }
 
 .footer__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mediaTablet {
+        flex-direction: column;
+        row-gap: 5px;
+    }
 }
 
+.footer__copyright {
+    @include mediaTablet {
+        font-size: 10px;
+    }
+}
 .footer__socials {
     display: flex;
     align-items: center;
@@ -19,6 +34,10 @@
 
     img {
         transition: opacity 0.1s ease-in;
+
+        @include mediaTablet {
+            width: 15px;
+        }
     }
     
     

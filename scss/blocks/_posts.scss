@@ -9,6 +9,24 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        a {
+            font-weight: 700;
+        }
+
+        @include mediaTablet {
+            justify-content: center;
+            column-gap: 60px;
+
+            a {
+                font-size: 12px;
+                font-weight: 700;
+            }
+        }
+    }
+
+    @include mediaTablet {
+        margin-bottom: 25px;
     }
 }
 
@@ -18,15 +36,27 @@
     ul {
         display: flex;
         justify-content: space-between;
-        column-gap: 20px;
+        gap: 20px 25px;
+
+        @include mediaTablet {
+            // flex-direction: column;
+            // align-items: center;
+            // row-gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     li {
         overflow: hidden;
         border-radius: 20px;
         background-color: $bgItems;
-        
-        max-width: 369px;
+
+        margin: 0 auto;
+
+        max-width: 336px;
 
         .post__info {
             display: flex;
@@ -41,6 +71,10 @@
             font-size: 24px;
             font-weight: 700;
             color: $textPost;
+
+            @include mediaTablet {
+                font-size: 18px;
+            }
         }
 
         time {
@@ -51,7 +85,14 @@
         p {
             font-size: 20px;
             color: $textPost;
+
+            @include mediaTablet {
+                font-size: 14px;
+            }
+        }
+
+        @include mediaTablet {
+            max-width: 336px;
         }
     }
-
 }

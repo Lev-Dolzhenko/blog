@@ -6,10 +6,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mediaTablet {
+        flex-direction: column;
+        row-gap: 15px;
+    }
 }
 
 .mailing__info {
     max-width: 600px;
+
+    h2 {
+        max-width: 360px;
+    }
     p {
         color: $secondary;
     }
@@ -17,6 +26,10 @@
 
 .mailing__title {
     margin-bottom: 33px;
+
+    @include mediaTablet {
+        margin-bottom: 15px;
+    }
 }
 
 .title-2--mailing {
@@ -27,9 +40,16 @@
     padding: 10px 14px 10px 30px;
     border-radius: 30px;
 
+    display: flex;
+    align-items: center;
+
     input {
         color: $white;
         padding-right: 10px;
+
+        @include mediaTablet {
+            font-size: 10px;
+        }
     }
 
     ::placeholder {
@@ -53,5 +73,14 @@
             transform: scale(1.1);
         }
 
+        @include mediaTablet {
+            width: 80px;
+            font-size: 10px;
+            padding: 9px 15px;
+        }
+    }
+
+    @include mediaTablet {
+        padding: 8px 10px 8px 10px;
     }
 }

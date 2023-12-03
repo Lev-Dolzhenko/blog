@@ -16,6 +16,26 @@
         font-size: 30px;
         font-weight: 700;
         color: $accent;
+
+        @include mediaTablet {
+            font-size: 24px;
+        }
+    }
+}
+
+.header__nav-btn { 
+    display: none;
+
+    @include mediaTablet {
+        display: block;
+    }
+}
+
+.header__nav {
+    display: block;
+
+    @include mediaTablet {
+        display: none;
     }
 }
 
@@ -47,7 +67,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mediaTablet {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 18px;
+        text-align: center;
+        justify-items: center;
+
+        .header__bottom__picture {
+            grid-row: 1/2;
+
+            width: 200px;
+        }
+    }
 }
+
 .headaer__bottom__info {
     display: flex;
     flex-direction: column;
@@ -56,23 +91,49 @@
     h1 {
         font-size: 48px;
         font-weight: 700;
+
+        @include mediaTablet {
+            font-size: 24px;
+        }
     }
 
     p {
         font-size: 26px;
         max-width: 713px;
+
+        @include mediaTablet {
+            font-size: 13px;
+            max-width: 280px;
+        }
+    }
+
+    @include mediaTablet {
+        row-gap: 18px;
     }
 }
+
 .header__bottom__socials {
     display: flex;
     align-items: center;
     column-gap: 32px;
 
     img {
+        width: 50px;
+        height: 50px;
+
         transition: transform 0.2s ease-in;
+
+        @include mediaTablet {
+            width: 40px;
+            height: 40px;
+        }
     }
 
     img:hover {
         transform: scale(1.1);
+    }
+
+    @include mediaTablet {
+        justify-content: center;
     }
 }
