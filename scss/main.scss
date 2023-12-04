@@ -8,15 +8,33 @@
 
 /* BASE */
 
-/* BLOCKS */ 
+/* BLOCKS WELCOMEPAGE */ 
 
-@import './blocks/header';
-@import './blocks/projects';
-@import './blocks/posts';
-@import './blocks/mailing';
-@import './blocks/footer';
-@import './blocks/nav-icon';
+@import './blocks/welcomePage/header';
+@import './blocks/welcomePage/projects';
+@import './blocks/welcomePage/posts';
+@import './blocks/welcomePage/mailing';
+@import './blocks/welcomePage/footer';
+@import './blocks/welcomePage/nav-icon';
 
+/* BLOCKS WELCOMEPAGE */ 
 
+/* BLOCKS POSTS */
 
-/* BLOCKS */ 
+@import './blocks/posts/header';
+@import './blocks/posts/posts';
+@import './blocks/posts/mailing';
+@import './blocks/posts/footer';
+
+/* BLOCKS POSTS */
+
+/* BLOCKS CURRENT POST */
+
+@import './blocks/currentPost/header';
+// @import './blocks/currentPost/posts';
+@import './blocks/currentPost/post';
+
+@import './blocks/currentPost/mailing';
+@import './blocks/currentPost/footer';
+
+/* BLOCKS POSTS */

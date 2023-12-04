@@ -1,0 +1,104 @@
+.main {
+    margin-top: 69px;
+
+    @include mediaTablet {
+        margin-top: 30px;
+    }
+}
+
+.posts {
+    margin-top: 95px;
+}
+
+.posts__titles {
+    margin-bottom: 99px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 38px;
+
+    text-align: center;
+
+    h1 {
+        color: $textPost;
+
+        @include mediaTablet {
+            font-size: 24px;
+        }
+    }
+
+    p {
+        color: $secondary;
+
+        @include mediaTablet {
+            font-size: 12px;
+        }
+    }
+
+    @include mediaTablet {
+        margin-bottom: 40px;
+
+        row-gap: 17px;
+    }
+}
+
+.posts__row {
+
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(336px, 1fr));
+        row-gap: 60px;
+
+        @include mediaTablet {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+    }
+
+    li {
+        overflow: hidden;
+        border-radius: 20px;
+        background-color: $bgItems;
+
+        margin: 0 auto;
+
+        max-width: 336px;
+
+        .post__info {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            text-align: center;
+
+            padding: 10px;
+        }
+
+        h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: $textPost;
+
+            @include mediaTablet {
+                font-size: 18px;
+            }
+        }
+
+        time {
+            font-size: 12px;
+            color: $datePost;
+        }
+
+        p {
+            font-size: 20px;
+            color: $textPost;
+
+            @include mediaTablet {
+                font-size: 14px;
+            }
+        }
+
+        @include mediaTablet {
+            max-width: 336px;
+        }
+    }
+}
