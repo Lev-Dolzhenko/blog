@@ -31,10 +31,16 @@
 /* BLOCKS CURRENT POST */
 
 @import './blocks/currentPost/header';
-// @import './blocks/currentPost/posts';
 @import './blocks/currentPost/post';
-
 @import './blocks/currentPost/mailing';
 @import './blocks/currentPost/footer';
 
 /* BLOCKS POSTS */
+
+/* BLOCKS NEWSLETTERS */
+
+@import './blocks/newsLetters/header';
+@import './blocks/newsLetters/newsLetters';
+@import './blocks/newsLetters/footer';
+
+/* BLOCKS NEWSLETTERS */
