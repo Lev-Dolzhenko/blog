@@ -1,0 +1,41 @@
+.createPost {
+}
+
+.createPost__row {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    
+
+    background-color: $bgItems;
+    width: 600px;
+    height: 500px;
+
+    padding: 5px 10px 0;
+
+    input {
+        border: 1px solid $accent;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+    
+        padding: 10px 15px;
+        height: 30px;
+    
+        border-radius: 12px;
+        background: $bg;
+    
+        font-size: 16px;
+        color: #fff;
+    
+        transition: background-color 0.2s ease-in;
+
+        &:hover {
+            background-color: $accent;
+        }
+    }
+}

@@ -147,6 +147,11 @@ a:hover {
   }
 }
 
+.universal-shadow {
+  -webkit-box-shadow: 0 0 5px #22D3EE;
+          box-shadow: 0 0 5px #22D3EE;
+}
+
 /* BASE */
 /* BLOCKS WELCOMEPAGE */
 .header {
@@ -1027,6 +1032,7 @@ a:hover {
   }
 }
 .posts__row li {
+  position: relative;
   overflow: hidden;
   border-radius: 20px;
   background-color: #1E293B;
@@ -1072,6 +1078,37 @@ a:hover {
   .posts__row li {
     max-width: 336px;
   }
+}
+.posts__row li button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 10px;
+  background-color: #1E293B;
+  border-radius: 50%;
+  align-items: center;
+  -webkit-transition: background-color 0.1s ease-in, -webkit-transform 0.2s ease-in;
+  transition: background-color 0.1s ease-in, -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, background-color 0.1s ease-in;
+  transition: transform 0.2s ease-in, background-color 0.1s ease-in, -webkit-transform 0.2s ease-in;
+}
+.posts__row li button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background-color: #22D3EE;
 }
 
 .mailing {
@@ -1247,6 +1284,49 @@ a:hover {
 }
 .footer__socials img:hover {
   opacity: 0.6;
+}
+
+.createPost__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 30px;
+  background-color: #1E293B;
+  width: 600px;
+  height: 500px;
+  padding: 5px 10px 0;
+}
+.createPost__row input {
+  border: 1px solid #22D3EE;
+}
+.createPost__row button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  padding: 10px 15px;
+  height: 30px;
+  border-radius: 12px;
+  background: #0F172A;
+  font-size: 16px;
+  color: #fff;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+.createPost__row button:hover {
+  background-color: #22D3EE;
 }
 
 /* BLOCKS POSTS */
@@ -2049,4 +2129,6 @@ a:hover {
 }
 .footer__socials img:hover {
   opacity: 0.6;
-} /* BLOCKS NEWSLETTERS */
+}
+
+/* BLOCKS NEWSLETTERS */
