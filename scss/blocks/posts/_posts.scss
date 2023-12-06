@@ -104,27 +104,14 @@
             max-width: 336px;
         }
 
-        button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
+        h5 {
             position: absolute;
-            top: 8px;
-            right: 8px;
+            top: 10px;
+            right: 10px;
 
-            padding: 10px;
             background-color: $bgItems;
-            border-radius: 50%;
-            align-items: center;
-
-            transition: transform 0.2s ease-in, background-color 0.1s ease-in;
-
-            &:hover {
-                transform: scale(1.1);
-                background-color: $accent;
-            }
+            padding: 10px;
+            border-radius: 10px;
         }
     }
 }

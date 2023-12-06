@@ -152,6 +152,10 @@ a:hover {
           box-shadow: 0 0 5px #22D3EE;
 }
 
+.button-dis {
+  opacity: 0.6;
+}
+
 /* BASE */
 /* BLOCKS WELCOMEPAGE */
 .header {
@@ -1079,36 +1083,13 @@ a:hover {
     max-width: 336px;
   }
 }
-.posts__row li button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.posts__row li h5 {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 10px;
+  top: 10px;
+  right: 10px;
   background-color: #1E293B;
-  border-radius: 50%;
-  align-items: center;
-  -webkit-transition: background-color 0.1s ease-in, -webkit-transform 0.2s ease-in;
-  transition: background-color 0.1s ease-in, -webkit-transform 0.2s ease-in;
-  transition: transform 0.2s ease-in, background-color 0.1s ease-in;
-  transition: transform 0.2s ease-in, background-color 0.1s ease-in, -webkit-transform 0.2s ease-in;
-}
-.posts__row li button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  background-color: #22D3EE;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .mailing {
