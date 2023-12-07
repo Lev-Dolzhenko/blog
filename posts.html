@@ -22,6 +22,7 @@
                     <div class="header__nav">
                         <nav class="nav">
                             <ul>
+                                <li><button class="buttonPost">CREATE NEW POST</button></li>
                                 <li><a class="nav__link" href="/posts.html">Posts</a></li>
                                 <li><a class="nav__link" href="/newsLetters.html">Newsletter</a></li>
                                 <li><a class="nav__link" href="https://vk.com/id509722603">VK</a></li>
@@ -41,11 +42,12 @@
         <section class="posts">
             <div class="container">
                 <div class="posts__titles">
-                    <h1 class="title-2">Posts Examples</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse bibendum.</p>
+                    <h1 class="title-2">Posts</h1>
+                    <p>___________________</p>
                 </div>
                 <div class="posts__row">
-                    <ul>
+                    <h2 class="noPosts">No posts yet</h2>
+                    <ul class="listPosts">
                         <!-- <li id="${postData.id}">
                             <h5 class='edit functions'>EDIT</h5>
                             <h5 class='delete functions'>DELETE</h5>
@@ -85,7 +87,15 @@
         </section>
         <section class="createPost">
             <div class="container">
-                <form class="createPost__row" enctype="multipart/form-data">
+                <form class="createPost__row none" enctype="multipart/form-data">
+                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg class="closeButton" width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="#fff" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <path
+                            d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7"
+                            stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
                     <input id="titleInput" type="text" placeholder="Title...">
                     <input id="descriptionInput" type="text" placeholder="Description...">
                     <input id="cover" type="file" name="photo" accept="image/*">

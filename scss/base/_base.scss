@@ -63,3 +63,16 @@ a:hover {
 .button-dis {
     opacity: 0.6;
 }
+
+.buttonPost {
+    font-size: 15px;
+    background-color: $accent;
+    padding: 10px;
+    border-radius: 20px;
+
+    transition: background-color 0.2s ease-in;
+
+    &:hover {
+        background-color: $accentHover;
+    }
+}

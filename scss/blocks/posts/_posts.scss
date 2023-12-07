@@ -44,7 +44,12 @@
 }
 
 .posts__row {
-
+    
+    .noPosts {
+        font-size: 50px;
+        font-weight: 700;
+        text-align: center;
+    }
 
     ul {
         display: grid;

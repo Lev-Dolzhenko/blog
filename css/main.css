@@ -156,6 +156,18 @@ a:hover {
   opacity: 0.6;
 }
 
+.buttonPost {
+  font-size: 15px;
+  background-color: #22D3EE;
+  padding: 10px;
+  border-radius: 20px;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+.buttonPost:hover {
+  background-color: #00a7d1;
+}
+
 /* BASE */
 /* BLOCKS WELCOMEPAGE */
 .header {
@@ -1024,6 +1036,11 @@ a:hover {
   }
 }
 
+.posts__row .noPosts {
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
 .posts__row ul {
   display: -ms-grid;
   display: grid;
@@ -1302,6 +1319,14 @@ a:hover {
   opacity: 0.6;
 }
 
+.createPost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .createPost__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1311,13 +1336,16 @@ a:hover {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 30px;
+  padding: 30px;
   background-color: #1E293B;
+  border: 2px solid #22D3EE;
+  border-radius: 30px;
   width: 600px;
-  height: 500px;
-  padding: 5px 10px 0;
 }
 .createPost__row input {
   border: 1px solid #22D3EE;
+  border-radius: 5px;
+  padding: 5px;
 }
 .createPost__row button {
   display: -webkit-box;
@@ -1332,6 +1360,7 @@ a:hover {
   -webkit-column-gap: 10px;
      -moz-column-gap: 10px;
           column-gap: 10px;
+  font-weight: 900;
   padding: 10px 15px;
   height: 30px;
   border-radius: 12px;
@@ -1343,6 +1372,15 @@ a:hover {
 }
 .createPost__row button:hover {
   background-color: #22D3EE;
+}
+.createPost__row svg {
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+  margin-left: auto;
+}
+.createPost__row svg:hover {
+  background-color: #d45e5e;
+  border-radius: 50%;
 }
 
 /* BLOCKS POSTS */

@@ -27,6 +27,11 @@ createPostButton.addEventListener('click', function (event) {
     event.preventDefault();
     createPost(inputTitle.value, inputDescription.value, inputPhoto.value);
     editButtonAll = document.querySelectorAll('.posts__row ul li button');
+    popup.classList.add('none');
+    checkCountPostCard();
+    inputTitle.value = '';
+    inputDescription.value = '';
+    inputPhoto.value = '';
 })
 function createPost(title, description, cover) {
     let postID = 'post_' + Math.random().toString(36).substring(2, 9);
@@ -38,7 +43,7 @@ function createPost(title, description, cover) {
 
     let postData = {
         id: postID,
-        title: title, 
+        title: title,
         description: description,
         cover: temp
     }
@@ -50,7 +55,7 @@ function createPost(title, description, cover) {
     localStorage.setItem('posts', JSON.stringify(postsData));
 
     listPosts.innerHTML = '';
-    
+
     postsData.forEach(postData => {
         listPosts.innerHTML +=
             `
@@ -104,7 +109,7 @@ listPosts.addEventListener('click', function (event) {
 
             // Получить уникальный идентификатор поста или другие данные, которые могут идентифицировать этот пост в localStorage
             const postId = postItem.id; // предположим, что у вас есть уникальный идентификатор поста в виде атрибута id для элемента списка <li>
-            
+
             // Получить данные из редактируемых полей
             const editedTitle = title.textContent;
             const editedDescription = description.textContent;
@@ -153,7 +158,7 @@ function loadPostCard() {
 
     postsData.forEach(postData => {
         listPosts.innerHTML +=
-        `
+            `
             <li id="${postData.id}">
             <h5 class='edit functions'>EDIT</h5>
             <h6 class='delete functions'>DELETE</h6>
@@ -177,7 +182,7 @@ loadPostCard();
 
 /* DELETE LOCALSTORAGE ITEM */
 
-listPosts.addEventListener('click', function(event) {
+listPosts.addEventListener('click', function (event) {
     if (event.target.tagName === 'H6') {
         let currPost = event.target.closest('li');
         let postId = currPost.id; // Предположим, что ID вашего поста хранится в свойстве id элемента <li>
@@ -186,9 +191,43 @@ listPosts.addEventListener('click', function(event) {
 
         postsData = postsData.filter(post => post.id !== postId);
         localStorage.setItem('posts', JSON.stringify(postsData));
+        checkCountPostCard();
         loadPostCard();
     }
 });
 
 /* DELETE LOCALSTORAGE ITEM */
 
+/* SHOW POPUP */
+
+const showPopup = document.querySelector('.buttonPost');
+const hidePopup = document.querySelector('.closeButton');
+const popup = document.querySelector('.createPost__row');
+
+showPopup.addEventListener('click', function () {
+    popup.classList.remove('none')
+})
+
+hidePopup.addEventListener('click', function () {
+    popup.classList.add('none');
+})
+
+/* SHOW POPUP */
+
+/* CHECK ARRAY OF POSTS */
+
+function checkCountPostCard() {
+    const noPostsTitle = document.querySelector('.noPosts');
+    let postsData = JSON.parse(localStorage.getItem('posts')) || [];
+
+    if (postsData.length === 0) {
+        noPostsTitle.classList.remove('none');
+    } else {
+        noPostsTitle.classList.add('none')
+    }
+}
+
+checkCountPostCard();
+
+
+/* CHECK ARRAY OF POSTS */
