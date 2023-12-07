@@ -46,17 +46,18 @@
                 </div>
                 <div class="posts__row">
                     <ul>
-                        <li>
-                            <h5>EDIT</h5>
-                            <img src="/img/posts/postOne.jpg" alt="First post">
+                        <!-- <li id="${postData.id}">
+                            <h5 class='edit functions'>EDIT</h5>
+                            <h5 class='delete functions'>DELETE</h5>
+                            <img src='${postData.cover}'>
                             <div class="post__info">
-                                <h4>${title}</h4>
+                                <h4>${postData.title}</h4>
                                 <time datetime="2024-05-24T12:00:00Z">${time()} of year</time>
                                 <p>
-                                ${description}
+                                ${postData.description}
                                 </p>
                             </div>
-                        </li>
+                            </li> -->
                     </ul>
                 </div>
             </div>
@@ -84,9 +85,10 @@
         </section>
         <section class="createPost">
             <div class="container">
-                <form class="createPost__row">
+                <form class="createPost__row" enctype="multipart/form-data">
                     <input id="titleInput" type="text" placeholder="Title...">
                     <input id="descriptionInput" type="text" placeholder="Description...">
+                    <input id="cover" type="file" name="photo" accept="image/*">
                     <button id="createPost">Create</button>
                 </form>
             </div>
