@@ -229,5 +229,12 @@ function checkCountPostCard() {
 
 checkCountPostCard();
 
-
 /* CHECK ARRAY OF POSTS */
+
+/* UPDATE YEAR COPY RIGHT */
+
+const yearCR = document.querySelector('.footer__copyright span');
+let dateCR = new Date();
+yearCR.textContent = dateCR.getFullYear();
+
+/* UPDATE YEAR COPY RIGHT */
