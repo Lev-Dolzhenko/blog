@@ -72,6 +72,13 @@
 
         max-width: 336px;
 
+        transition: box-shadow 0.1s ease-in;
+
+        &:hover {
+            box-shadow: 0 0 8px $accent;
+            cursor: pointer;
+        }
+
         .post__info {
             display: flex;
             flex-direction: column;

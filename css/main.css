@@ -1059,6 +1059,15 @@ a:hover {
   background-color: #1E293B;
   margin: 0 auto;
   max-width: 336px;
+  -webkit-transition: -webkit-box-shadow 0.1s ease-in;
+  transition: -webkit-box-shadow 0.1s ease-in;
+  transition: box-shadow 0.1s ease-in;
+  transition: box-shadow 0.1s ease-in, -webkit-box-shadow 0.1s ease-in;
+}
+.posts__row li:hover {
+  -webkit-box-shadow: 0 0 8px #22D3EE;
+          box-shadow: 0 0 8px #22D3EE;
+  cursor: pointer;
 }
 .posts__row li .post__info {
   display: -webkit-box;
