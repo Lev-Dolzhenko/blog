@@ -1662,6 +1662,95 @@ a:hover {
   }
 }
 
+/* ------------------------------------------------ */
+.post__row__functions {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+  border: 3px solid #22D3EE;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.post__row__functions svg {
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  transition: -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+.post__row__functions svg:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.post__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+.post__buttons button {
+  background-color: #22D3EE;
+  padding: 10px;
+  border-radius: 15px;
+  width: 145px;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+.post__buttons button:first-child {
+  margin-left: 30px;
+}
+.post__buttons button:hover {
+  background-color: #00a7d1;
+}
+
+.post__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+.post__inputs textarea {
+  border: 1px solid #22D3EE;
+  border-radius: 2px;
+  padding: 5px;
+  resize: none;
+}
+.post__inputs input {
+  margin-left: 30px;
+  border: 1px solid #22D3EE;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.post__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-column-gap: 35px;
+     -moz-column-gap: 35px;
+          column-gap: 35px;
+  border: 3px solid #22D3EE;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
 .mailing {
   margin-top: 130px;
 }
