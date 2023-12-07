@@ -62,6 +62,7 @@ function createPost(title, description, cover) {
             <li id="${postData.id}">
             <h5 class='edit functions'>EDIT</h5>
             <h6 class='delete functions'>DELETE</h6>
+            <a href="currentPost.html?id=${postData.id}">
             <img src='${postData.cover}'>
             <div class="post__info">
                 <h4>${postData.title}</h4>
@@ -70,6 +71,7 @@ function createPost(title, description, cover) {
                 ${postData.description}
                 </p>
             </div>
+            </a>
             </li>
             `
             ;
@@ -162,6 +164,7 @@ function loadPostCard() {
             <li id="${postData.id}">
             <h5 class='edit functions'>EDIT</h5>
             <h6 class='delete functions'>DELETE</h6>
+            <a href="currentPost.html?id=${postData.id}">
             <img src='${postData.cover}'>
             <div class="post__info">
                 <h4>${postData.title}</h4>
@@ -170,6 +173,7 @@ function loadPostCard() {
                 ${postData.description}
                 </p>
             </div>
+            </a>
             </li>
         `
             ;
@@ -238,3 +242,9 @@ let dateCR = new Date();
 yearCR.textContent = dateCR.getFullYear();
 
 /* UPDATE YEAR COPY RIGHT */
+
+/* LINK FOR POSTS */
+
+
+
+/* LINK FOR POSTS */
