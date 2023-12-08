@@ -45,7 +45,7 @@ function createPost(title, description, cover) {
         id: postID,
         title: title,
         description: description,
-        cover: temp
+        cover: temp,
     }
 
     let postsData = JSON.parse(localStorage.getItem('posts')) || [];
@@ -248,3 +248,4 @@ yearCR.textContent = dateCR.getFullYear();
 
 
 /* LINK FOR POSTS */
+

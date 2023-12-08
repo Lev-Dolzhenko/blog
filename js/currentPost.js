@@ -13,10 +13,15 @@ let currPost = posts.find((post) => post.id === postId);
 
 const functionButtons = document.querySelectorAll('.post__buttons button');
 const postContent = document.querySelector('.post__row');
-const inputTitle = document.querySelector('.post__inputs input')
+const inputTitleOne = document.getElementById('titleOne');
+const inputTitleTwo = document.getElementById('titleTwo');
 const textareaDescription = document.querySelector('.post__inputs textarea');
 const buttonPost = document.querySelector('.post__inputs button');
 
+currPost.titleOne = {};
+currPost.titleTwo = {};
+currPost.titleThree = {};
+currPost.description = {};
 
 function chooseFunction() {
     for (let i = 0; i < functionButtons.length; i++) {
@@ -24,25 +29,76 @@ function chooseFunction() {
         currButton.addEventListener('click', function () {
             switch (currButton.name) {
                 case 'h1':
-                    inputTitle.classList.remove('none');
+                    inputTitleOne.classList.remove('none');
                     buttonPost.classList.remove('none');
+                    buttonPost.addEventListener('click', function () {
+                        if (inputTitleOne.value.trim() !== '') {
+                            let postTitleID = 'postTitle_' + Math.random().toString(36).substring(2, 9);
+                            let title1 = document.createElement('h1');
+                            title1.textContent = inputTitleOne.value;
+                            title1.classList.add('titleStageOne');
+                            postContent.appendChild(title1);
+                            currPost.titleOne[postTitleID] = inputTitleOne.value;
 
-                    buttonPost.addEventListener('click', function() {
-                        let title1 = document.createElement('h1');
-                        title1.textContent = inputTitle.value;
-                        title1.classList.add('titleStageOne');
-                        postContent.appendChild(title1);
-                        inputTitle.value = '';
+                            let currTitleOneString = JSON.stringify(currPost.titleOne);
+                            localStorage.setItem('currTitleOne', currTitleOneString);
+
+                            inputTitleOne.value = '';
+                            inputTitleOne.classList.add('none');
+                            buttonPost.classList.add('none');
+                        }
                     })
                     break;
                 case 'h2':
-                    console.log('h2')
+                    inputTitleTwo.classList.remove('none');
+                    buttonPost.classList.remove('none');
+                    buttonPost.addEventListener('click', function () {
+                        if (inputTitleTwo.value.trim() !== '') {
+                            let postTitleID = 'postTitle_' + Math.random().toString(36).substring(2, 9);
+                            let title2 = document.createElement('h2');
+                            title2.textContent = inputTitleTwo.value;
+                            title2.classList.add('titleStageTwo');
+                            postContent.appendChild(title2);
+                            currPost.titleTwo[postTitleID] = inputTitleTwo.value;
+
+                            let currTitleTwoString = JSON.stringify(currPost.titleTwo);
+                            localStorage.setItem('currTitleTwo', currTitleTwoString);
+
+                            inputTitleTwo.value = '';
+                            inputTitleTwo.classList.add('none');
+                            buttonPost.classList.add('none');
+                        }
+                    })
                     break;
                 case 'h3':
-                    console.log('h3')
+                    inputTitle.classList.remove('none');
+                    buttonPost.classList.remove('none');
+                    buttonPost.addEventListener('click', function () {
+                        if (inputTitleThree.value.trim() !== '') {
+                        let postTitleID = 'postTitle_' + Math.random().toString(36).substring(2, 9);
+                        let title3 = document.createElement('h3');
+                        title3.textContent = inputTitle.value;
+                        title3.classList.add('titleStageThree');
+                        postContent.appendChild(title3);
+                        currPost.titleThree[postTitleID] = inputTitle.value;
+                        inputTitle.value = '';
+                        }
+                    })
                     break;
                 case 'p':
-                    console.log('p')
+                    textareaDescription.classList.remove('none');
+                    buttonPost.classList.remove('none');
+                    buttonPost.addEventListener('click', function () {
+                        if (textareaDescription.value.trim() !== '') {
+                        let postDescID = 'postDesc_' + Math.random().toString(36).substring(2, 9);
+                        let description = document.createElement('p');
+                        description.textContent = textareaDescription.value;
+                        description.classList.add('description');
+                        postContent.appendChild(description);
+                        currPost.description[postDescID] = textareaDescription.value;
+                        textareaDescription.value = '';
+                        }
+                    })
                     break;
                 case 'ul':
                     console.log('ul')
