@@ -46,6 +46,7 @@ function createPost(title, description, cover) {
         title: title,
         description: description,
         cover: temp,
+        post: {}
     }
 
     let postsData = JSON.parse(localStorage.getItem('posts')) || [];
