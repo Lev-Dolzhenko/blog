@@ -7,11 +7,13 @@ let posts = JSON.parse(localStorage.getItem('posts')) || [];
 
 let currPost = posts.find((post) => post.id === postId);
 
+console.log(currPost);
 /* LOAD CURRENT POST ON PAGE */
 
-/* CREATING FUNCTIONS FOR PAGE */
+console.log(currPost);
 
 const functionButtons = document.querySelectorAll('.post__buttons button');
+
 const postContent = document.querySelector('.post__row');
 const inputTitleOne = document.getElementById('titleOne');
 const inputTitleTwo = document.getElementById('titleTwo');
@@ -19,8 +21,30 @@ const inputTitleThree = document.getElementById('titleThree');
 const textareaDescription = document.querySelector('.post__inputs textarea');
 const buttonPost = document.querySelector('.post__inputs button');
 
-currPost.post = {};
+const savePost = document.getElementById('save');
 
+// const saveInput = document.querySelector('.post__inputs button')
+// const buttonH1 = document.getElementById('post__h1');
+// const inputH1 = document.getElementById('titleOne');
+
+// buttonH1.addEventListener('click', function () {
+//     saveInput.classList.remove('none')
+//     inputH1.classList.remove('none');
+// })
+
+// buttonPost.addEventListener('click', function () {
+//     let postTitleID = 'postTitleOne_' + Math.random().toString(36).substring(2, 9);
+//     currPost.post[postTitleID] = inputTitleOne.value;
+// })
+
+// savePost.addEventListener('click', function () {
+//     // Находим индекс вашего поста в массиве posts
+//     const index = posts.findIndex((post) => post.id === postId);
+//     // Изменяем текущий пост
+//     posts[index] = currPost;
+//     // Перезаписываем измененный массив в localStorage
+//     localStorage.setItem('posts', JSON.stringify(posts));
+// })
 
 function chooseFunction() {
     for (let i = 0; i < functionButtons.length; i++) {
@@ -39,9 +63,13 @@ function chooseFunction() {
                             postContent.appendChild(title1);
                             currPost.post[postTitleID] = inputTitleOne.value;
 
-                            let currTitleOneString = JSON.stringify(currPost.post);
-                            localStorage.setItem('post', currTitleOneString);
-                            
+                            // Находим индекс вашего поста в массиве posts
+                            const index = posts.findIndex((post) => post.id === postId);
+                            // Изменяем текущий пост
+                            posts[index] = currPost;
+                            // Перезаписываем измененный массив в localStorage
+                            localStorage.setItem('posts', JSON.stringify(posts));
+
                             inputTitleOne.value = '';
                             inputTitleOne.classList.add('none');
                             buttonPost.classList.add('none');
@@ -60,8 +88,12 @@ function chooseFunction() {
                             postContent.appendChild(title2);
                             currPost.post[postTitleID] = inputTitleTwo.value;
 
-                            let currTitleTwoString = JSON.stringify(currPost.post);
-                            localStorage.setItem('post', currTitleTwoString);
+                            // Находим индекс вашего поста в массиве posts
+                            const index = posts.findIndex((post) => post.id === postId);
+                            // Изменяем текущий пост
+                            posts[index] = currPost;
+                            // Перезаписываем измененный массив в localStorage
+                            localStorage.setItem('posts', JSON.stringify(posts));
 
                             inputTitleTwo.value = '';
                             inputTitleTwo.classList.add('none');
@@ -81,8 +113,12 @@ function chooseFunction() {
                             postContent.appendChild(title3);
                             currPost.post[postTitleID] = inputTitleThree.value;
 
-                            let currTitleThreeString = JSON.stringify(currPost.post);
-                            localStorage.setItem('post', currTitleThreeString);
+                            // Находим индекс вашего поста в массиве posts
+                            const index = posts.findIndex((post) => post.id === postId);
+                            // Изменяем текущий пост
+                            posts[index] = currPost;
+                            // Перезаписываем измененный массив в localStorage
+                            localStorage.setItem('posts', JSON.stringify(posts));
 
                             currPost.post[postTitleID] = inputTitleThree.value;
                             inputTitleThree.value = '';
@@ -103,8 +139,12 @@ function chooseFunction() {
                             postContent.appendChild(description);
                             currPost.post[postDescID] = textareaDescription.value;
 
-                            let currTitleDescString = JSON.stringify(currPost.post);
-                            localStorage.setItem('post', currTitleDescString);
+                            // Находим индекс вашего поста в массиве posts
+                            const index = posts.findIndex((post) => post.id === postId);
+                            // Изменяем текущий пост
+                            posts[index] = currPost;
+                            // Перезаписываем измененный массив в localStorage
+                            localStorage.setItem('posts', JSON.stringify(posts));
 
                             currPost.post[postDescID] = textareaDescription.value;
                             textareaDescription.value = '';
@@ -121,70 +161,77 @@ function chooseFunction() {
     }
 }
 
-chooseFunction() 
-
-/* CREATING FUNCTIONS FOR PAGE */
-
-/* LOAD LOCALSTORAGE */
-
-function loadPost() {
-    let post = JSON.parse(localStorage.getItem('post'));
-
-    for (let key in post) {
-        if (post.hasOwnProperty(key)) {
-            let arrKey = key.split('_');
-            let partKey = arrKey[0];
-            if (partKey == 'postTitleOne') {
-                let element = document.createElement('div');
-                element.classList.add('titleStageOne')
-                element.textContent = `${post[key]}`;
-                postContent.appendChild(element);
-            } else if (partKey == 'postTitleTwo') {
-                let element = document.createElement('div');
-                element.classList.add('titleStageTwo')
-                element.textContent = `${post[key]}`;
-                postContent.appendChild(element);
-            } else if (partKey == 'postTitleThree') {
-                let element = document.createElement('div');
-                element.classList.add('titleStageThree')
-                element.textContent = `${post[key]}`;
-                postContent.appendChild(element);
-            } else if (partKey == 'postDesc') {
-                let element = document.createElement('div');
-                element.classList.add('description')
-                element.textContent = `${post[key]}`;
-                postContent.appendChild(element);
-            }
-        }
-    }
-}
-
-loadPost();
-
-/* LOAD LOCALSTORAGE */
-
-/* SAVE POST */
+chooseFunction()
 
 const saveButton = document.getElementById('save');
 const buttonsFunc = document.querySelector('.post__row__functions');
 
-saveButton.addEventListener('click', function() {
+saveButton.addEventListener('click', function () {
     postContent.classList.remove('post__row')
     postContent.classList.add('post__row--saved')
     buttonsFunc.classList.add('none')
     saveButton.classList.add('none');
-    localStorage.setItem('savedContent', postContent.innerHTML);
-    console.log(currPost);
+    const index = posts.findIndex((post) => post.id === postId);
+    posts[index].flag = false;
+    localStorage.setItem('posts', JSON.stringify(posts))
+    // localStorage.setItem('savedContent', postContent.innerHTML);
+    // console.log(currPost);
 })
 
-window.onload = function() {
-    if(localStorage.getItem('savedContent')) {
-        postContent.innerHTML = localStorage.getItem('savedContent');
-        postContent.classList.add('post__row--saved');
-        buttonsFunc.classList.add('none');
+// window.onload = function () {
+//     if (localStorage.getItem('savedContent')) {
+//         postContent.innerHTML = localStorage.getItem('savedContent');
+//         postContent.classList.add('post__row--saved');
+//         buttonsFunc.classList.add('none');
+//         saveButton.classList.add('none');
+//     }
+// }
+
+window.onload = function () {
+    const index = posts.findIndex((post) => post.id === postId);
+    if (posts[index].flag == false) {
+        postContent.classList.remove('post__row')
+        postContent.classList.add('post__row--saved')
+        buttonsFunc.classList.add('none')
         saveButton.classList.add('none');
     }
+    const postImage = document.getElementById('postImage');
+    postImage.src = posts[index].cover;
+    posts[index] = currPost;
+    console.log(posts[index])
+    for (let key in posts[index].post) {
+        if (posts[index].post.hasOwnProperty(key)) {
+            console.log(key, posts[index].post[key]);
+            // postContent.innerHTML += posts[index].post[key];
+            let temp = key.split('_');
+            let defKey = temp[0];
+            console.log(defKey)
+            if (defKey === 'postTitleOne') {
+                let title1 = document.createElement('h1');
+                title1.textContent = posts[index].post[key]; // или title1.innerHTML = posts[index].post[key];
+                title1.classList.add('titleStageOne');
+                postContent.appendChild(title1); // Используйте метод appendChild для добавления элемента
+            }
+            if (defKey === 'postTitleTwo') {
+                let title2 = document.createElement('h2');
+                title2.textContent = posts[index].post[key];
+                title2.classList.add('titleStageTwo');
+                postContent.appendChild(title2);
+            }
+            if (defKey == 'postTitleThree') {
+                let title3 = document.createElement('h3');
+                title3.textContent = posts[index].post[key];
+                title3.classList.add('titleStageThree');
+                postContent.appendChild(title3);
+            }
+            if (defKey == 'postDesc') {
+                let desc = document.createElement('p');
+                desc.textContent = posts[index].post[key];
+                desc.classList.add('description');
+                postContent.appendChild(desc);
+            }
+        }
+    }
+
 }
 
-
-/* SAVE POST */
