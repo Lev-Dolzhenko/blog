@@ -46,6 +46,8 @@ function createPost(title, description, cover) {
         title: title,
         description: description,
         cover: temp,
+        flag: true,
+        post: {}
     }
 
     let postsData = JSON.parse(localStorage.getItem('posts')) || [];
@@ -103,12 +105,12 @@ listPosts.addEventListener('click', function (event) {
     const postItem = event.target.closest('li');
     const title = postItem.querySelector('h4');
     const description = postItem.querySelector('p');
-    const buttonFlag = postItem.querySelector('h5')
+    const buttonFlag = postItem.querySelector('h5');
+    const linkPost = postItem.querySelector('a');
 
     if (event.target.tagName === 'H5') {
         if (editMode) {
             // Режим сохранения
-
             // Получить уникальный идентификатор поста или другие данные, которые могут идентифицировать этот пост в localStorage
             const postId = postItem.id; // предположим, что у вас есть уникальный идентификатор поста в виде атрибута id для элемента списка <li>
 
@@ -122,6 +124,7 @@ listPosts.addEventListener('click', function (event) {
             // Найти отредактированный пост в списке
             let editedPost = postsData.find(post => post.id === postId);
             if (editedPost) {
+                linkPost.classList.remove('disabled-link');
                 // Обновить данные отредактированного поста
                 editedPost.title = editedTitle;
                 editedPost.description = editedDescription;
@@ -138,6 +141,7 @@ listPosts.addEventListener('click', function (event) {
         }
         else {
             // Режим редактирования
+            linkPost.classList.add('disabled-link');
             title.setAttribute('contentEditable', true);
             description.setAttribute('contentEditable', true);
             title.focus();
